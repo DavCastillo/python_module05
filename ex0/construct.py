@@ -1,0 +1,28 @@
+#!/usr/bin/env python3
+
+import sys
+import os
+import site
+
+
+if __name__ == "__main__":
+    if (sys.prefix != sys.base_prefix):
+        print("LABORATORY STATUS: The laboratory is sealed\n")
+        print("Current Python:", sys.executable)
+        print("Virtual Environment:", os.path.basename(sys.prefix))
+        print("Environment Path:", sys.prefix, "\n")
+        print("SUCCESS: You're working in an isolated environment!")
+        print("Safe to install packages without affecting the global system.")
+        print("Reagent installation path:")
+        print(site.getsitepackages()[1], "\n")
+    else:
+        print("\nLABORATORY STATUS: You're working in the open\n")
+        print("Current Python:", sys.executable)
+        print("Virtual Environment: None detected\n")
+        print("WARNING: You're in the global environment!")
+        print("Every reagent you install here leaks into the whole system.\n")
+        print("To seal the laboratory, run:")
+        print("python -m venv lab_env")
+        print("source lab_env/bin/activate # On Unix")
+        print("lab_env\\Scripts\\activate # On Windows\n")
+        print("Then run this program again.")
