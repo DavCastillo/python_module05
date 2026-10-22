@@ -17,7 +17,8 @@ def main() -> None:
     if missing:
         print("Use pip or poetry to install missing dependencies:")
         print("pip: Run 'pip install -r requirements.txt'")
-        print("poetry: Run 'poetry install', and "
+        print("poetry: if you don't have poetry run 'pip install poetry'"
+              " then run 'poetry install', and "
               "'poetry run python loading.py'")
         return
 
